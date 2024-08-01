@@ -36,13 +36,6 @@ export const fetchUsers = async (sendRequest, page = 0, size = 20, sortBy = 'ema
 
 
 
-// userAPIService.js
-
-
-
-
-// userAPIService.js
-
 
 export const fetchUsersAdmin = async ({ page = 0, size = 20, sortBy = 'email', order = 0, role = 'all', name = '', token }) => {
   try {
@@ -91,52 +84,55 @@ export const fetchUsersAdmin = async ({ page = 0, size = 20, sortBy = 'email', o
 
 
 
-
-export const deleteUser = async (userId, token, sendRequest) => {
-  try {
-    await sendRequest(
-      `${BASE_URL}api/user/v1/delete/${userId}`,
-      "DELETE",
-      null,
-      {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      }
-    );
-  } catch (err) {
-    throw err;
-  }
-};
-
-export const createEquipment = async (formData, token, sendRequest) => {
-  try {
-    const response = await sendRequest(
-      `${BASE_URL}api/items/equipment/create`,
-      "POST",
-      formData,
-      {
-        Authorization: `Bearer ${token}`
-      }
-    );
-    return response;
-  } catch (err) {
-    throw err;
-  }
+const customEncode = (str) => {
+  return str.replace(/ /g, ' ');
 };
 
 
-export const fetchConsumables = async (sendRequest, page = 0, size = 20, order = 0, token) => {
+export const fetchConsumables = async (sendRequest, page = 1, size = 20, token, filters = {}) => {
   try {
-    const url = `${BASE_URL}api/items/v1/consumables/query?size=${size}&order=${order}`;
+    const queryParams = new URLSearchParams({
+      page,
+      size,
+    });
+
+    // Always include sortBy createdAt and the custom order encoding
+    if (filters.order) {
+      queryParams.append("sortBy", `createdAt&order${customEncode(filters.order)}`);
+    }
+
+    // Manually append individual filters with custom encoding
+    if (filters.region) {
+      queryParams.append("filterOr", `region|eq|${customEncode(filters.region)}`);
+    }
+    if (filters.listingType) {
+      queryParams.append("filterAnd", `listingType|eq|${customEncode(filters.listingType)}`);
+    }
+    if (filters.consumableType) {
+      queryParams.append("filterOr", `consumableType|eq|${customEncode(filters.consumableType)}`);
+    }
+    if (filters.consumable) {
+      queryParams.append("filterAnd", `consumableType|eq|${customEncode(filters.consumableType)}&consumable|eq|${customEncode(filters.consumable)}`);
+    }
+    if (filters.orderType) {
+      queryParams.append("filterAnd", `orderType|eq|${customEncode(filters.orderType)}`);
+    }
+    if (filters.mode) {
+      queryParams.append("filterAnd", `mode|eq|${customEncode(filters.mode)}`);
+    }
+
+    const url = `${BASE_URL}api/items/v1/consumables/query?${queryParams.toString()}`;
+
     const responseData = await sendRequest(
       url,
       "POST",
       null,
       {
-        accept: "*/*",
+        accept: "application/json",
         Authorization: `Bearer ${token}`
       }
     );
+
     return responseData.data;
   } catch (err) {
     throw err;

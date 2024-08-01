@@ -1,0 +1,1543 @@
+{
+	"info": {
+		"_postman_id": "0db94e80-8b47-4c15-bd50-b77f51a33d42",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36489270",
+		"_collection_link": "https://diablo-sanctuary-finest.postman.co/workspace/Diablo-Sanctuary-Finest~43a92c41-4f47-4d32-89a3-ef7a35e50338/collection/36489270-0db94e80-8b47-4c15-bd50-b77f51a33d42?action=share&source=collection_link&creator=36489270"
+	},
+	"item": [
+		{
+			"name": "User Copy",
+			"item": [
+				{
+					"name": "Query",
+					"item": [
+						{
+							"name": "Query Users All ",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ _.ultimate_token }}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}{/api/user/v1/query?page=1&size=30&sortBy=email&order=1",
+									"host": [
+										"{{base_url}}{"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "size",
+											"value": "30"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query User by name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ _.ultimate_token }}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterAnd=name|eq|ultimate1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterAnd",
+											"value": "name|eq|ultimate1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query User by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ _.ultimate_token }}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{ _.base_url }}/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=id|eq|01J3HY5JZ13BASCG1WECFQKFVG",
+									"host": [
+										"{{ _.base_url }}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "id|eq|01J3HY5JZ13BASCG1WECFQKFVG"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query User by battle Tag",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ _.ultimate_token }}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{ _.base_url }}/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=battleTag|eq|Test%23pro123",
+									"host": [
+										"{{ _.base_url }}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "battleTag|eq|Test#pro123"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "query user by role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ _.ultimate_token }}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoidWx0aW1hdGUifV0sIm5hbWUiOiJ1bHRpbWF0ZSIsImV4cCI6MTcyMTg3MjI4OCwidXNlcklkIjoiMDFKM0hZNUcwUUZCV1JDSkMzMEtUWDJCMTQiLCJiYXR0bGVfdGFnIjoiVGVzdCN1bHRpbWF0ZTEyMyIsImVtYWlsIjoidWx0aW1hdGVAeHNpc2VjLmNvbSJ9.hqto3DG-fiz9WJsAsfIEEMo4UyguUUarGJA7OMu7m0I"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8888/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=userProfiles.role|eq|ultimate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "userProfiles.role|eq|ultimate"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query all users based on date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoidWx0aW1hdGUifV0sIm5hbWUiOiJ1bHRpbWF0ZSIsImV4cCI6MTcyMTg3NzE0MywidXNlcklkIjoiMDFKM0hZNUcwUUZCV1JDSkMzMEtUWDJCMTQiLCJiYXR0bGVfdGFnIjoiVGVzdCN1bHRpbWF0ZTEyMyIsImVtYWlsIjoidWx0aW1hdGVAeHNpc2VjLmNvbSJ9.C6oYsubnznpjSTx-a71qQJ42MHXA7PBW4WDn_-VnUvo"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8888/api/user/v1/query?page=0&size=20&sortBy=createdAt&order=1&filterOr=name|like|ultim%26userProfiles.role|eq|ultimate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "createdAt"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "name|like|ultim&userProfiles.role|eq|ultimate"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query user by name",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ULTIMATE_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoidWx0aW1hdGUifV0sIm5hbWUiOiJ1bHRpbWF0ZSIsImV4cCI6MTcyMjI1NDA5NCwidXNlcklkIjoiMDFKM0hZNUcwUUZCV1JDSkMzMEtUWDJCMTQiLCJiYXR0bGVfdGFnIjoiVGVzdCN1bHRpbWF0ZTEyMyIsImVtYWlsIjoidWx0aW1hdGVAeHNpc2VjLmNvbSJ9.ZRZOIgzJa9xcnLmnfEkMx5X6UzmdeLNleVqY62SXOZw"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=name%7Clike%7Cpro",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "name%7Clike%7Cpro"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Query user by name Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ULTIMATE_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoidWx0aW1hdGUifV0sIm5hbWUiOiJ1bHRpbWF0ZSIsImV4cCI6MTcyMjI1NDA5NCwidXNlcklkIjoiMDFKM0hZNUcwUUZCV1JDSkMzMEtUWDJCMTQiLCJiYXR0bGVfdGFnIjoiVGVzdCN1bHRpbWF0ZTEyMyIsImVtYWlsIjoidWx0aW1hdGVAeHNpc2VjLmNvbSJ9.ZRZOIgzJa9xcnLmnfEkMx5X6UzmdeLNleVqY62SXOZw"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=name%7Clike%7Cpro",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "name%7Clike%7Cpro"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "query user ec2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoidWx0aW1hdGUifV0sIm5hbWUiOiJ1bHRpbWF0ZSIsImV4cCI6MTcyMjI1OTkxOCwidXNlcklkIjoiMDFKM0hZNUcwUUZCV1JDSkMzMEtUWDJCMTQiLCJiYXR0bGVfdGFnIjoiVGVzdCN1bHRpbWF0ZTEyMyIsImVtYWlsIjoidWx0aW1hdGVAeHNpc2VjLmNvbSJ9.umv-bJRHK2p4pxicpETroP0qfXav1dhtiCYXd6Tzkk4"
+									}
+								],
+								"url": {
+									"raw": "http://ec2-3-249-123-204.eu-west-1.compute.amazonaws.com/api/user/v1/query?page=0&size=20&sortBy=email&order=1&filterOr=name%7Ceq%7Cpro",
+									"protocol": "http",
+									"host": [
+										"ec2-3-249-123-204",
+										"eu-west-1",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"query"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "20"
+										},
+										{
+											"key": "sortBy",
+											"value": "email"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										},
+										{
+											"key": "filterOr",
+											"value": "name%7Ceq%7Cpro"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Get the raw response text",
+											"const token = pm.response.text();",
+											"",
+											"// Log the raw response to the console for debugging",
+											"console.log(token);",
+											"",
+											"// Set the raw response as a global variable",
+											"pm.globals.set(\"ADMIN_TOKEN\", token);",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"admin@xsisec.com\",\n  \"password\": \"Test1234#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Ultimate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Get the raw response text",
+											"const token = pm.response.text();",
+											"",
+											"// Log the raw response to the console for debugging",
+											"console.log(token);",
+											"",
+											"// Set the raw response as a global variable",
+											"pm.globals.set(\"ULTIMATE_TOKEN\", token);",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"ultimate@xsisec.com\",\n  \"password\": \"Test1234#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login pro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Get the raw response text",
+											"const token = pm.response.text();",
+											"",
+											"// Log the raw response to the console for debugging",
+											"console.log(token);",
+											"",
+											"// Set the raw response as a global variable",
+											"pm.globals.set(\"PRO_TOKEN\", token);",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"pro@xsisec.com\",\n  \"password\": \"Test1234#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login standard",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Get the raw response text",
+											"const token = pm.response.text();",
+											"",
+											"// Log the raw response to the console for debugging",
+											"console.log(token);",
+											"",
+											"// Set the raw response as a global variable",
+											"pm.globals.set(\"STANDARD_TOKEN\", token);",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"standard@xsisec.com\",\n  \"password\": \"Test1234#!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/auth/v1/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"v1",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"item": [
+						{
+							"name": "Create user Standard",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"standard\",\n  \"email\": \"standard@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Europe/Stockholm\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create user pro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"pro3\",\n  \"email\": \"pro3@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Europe/Stockholm\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create user ultimate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"ultimate\",\n  \"email\": \"ultimate@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Europe/Stockholm\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"admin\",\n  \"email\": \"admin@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Europe/Stockholm\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/user/v1/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"v1",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ULTIMATE_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"pro1updated\",\n  \"email\": \"pro1@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Asia/India\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/01J2XFVZG4G1E1TGQDGHA3BZ7X",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"01J2XFVZG4G1E1TGQDGHA3BZ7X"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ _.pro_token }}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/01J36DX4S1TE9JMKJS966Z68B7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"01J36DX4S1TE9JMKJS966Z68B7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyU3RhdHVzIjoiYWN0aXZlIiwiWm9uZUlkIjoiRXVyb3BlL1N0b2NraG9sbSIsInJvbGVzIjpbeyJyb2xlIjoic3RhbmRhcmQifV0sIm5hbWUiOiJzdGFuZGFyZDYiLCJleHAiOjE3MjExNDYyOTYsInVzZXJJZCI6IjAxSjJYWjk4R1g2MEtWQUdWUDlEUERWM1hXIiwiYmF0dGxlX3RhZyI6InRlc3QjMTIzNCIsImVtYWlsIjoic3RhbmRhcmQ2QHhzaXNlYy5jb20ifQ.5NDx0lSOIWem_HzkZLtMg_MuamZWQGpqCGHgGrBTVf8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/delete/01J2XZ98GX60KVAGVP9DPDV3XW",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"delete",
+								"01J2XZ98GX60KVAGVP9DPDV3XW"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query lots of filters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ _.ultimate_token }}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"filters\": {\n        \"name\": {\n            \"neq\": \"standard3\"\n        },\n        \"email\": \"ultimate@gmail.com\",\n        \"user_status\": [\"ACTIVE\", \"WITHDRAWN\"],\n        \"role\": [\"standard\", \"admin\"],\n        \"zoneId\": \"India\",\n        \"createdAt\": {\n            \"from\": \"2024-01-01T00:00:00Z\",\n            \"to\": \"2024-12-31T23:59:59Z\"\n        },\n        \"updatedAt\": {\n            \"from\": \"2024-01-01T00:00:00Z\",\n            \"to\": \"2024-12-31T23:59:59Z\"\n        },\n        \"current_role\": \"admin\",\n        \"current_role_started_at\": {\n            \"from\": \"2024-01-01T00:00:00Z\",\n            \"to\": \"2024-12-31T23:59:59Z\"\n        },\n        \"current_role_end_at\": {\n            \"from\": \"2025-01-01T00:00:00Z\",\n            \"to\": \"2025-12-31T23:59:59Z\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/query?page=1&size=30&sortBy=email&order=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"query"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "30"
+								},
+								{
+									"key": "sortBy",
+									"value": "email"
+								},
+								{
+									"key": "order",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkB4c2lzZWMuY29tIiwiaWF0IjoxNzE5ODU1OTUxLCJleHAiOjE3MTk4NjE5NTF9.HbVkZPC-ngROB0Zfd56eQ_VmmoMmw6mMzdx-3pRZIQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/v1/revoke",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"v1",
+								"revoke"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user Admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"admin\",\n  \"email\": \"admin@xsisec.com\",\n  \"password\": \"Test1234#!\",\n  \"battle_tag\": \"test#1234\",\n  \"zone_id\": \"Europe/Stockholm\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/user/v1/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"v1",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
